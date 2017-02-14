@@ -1,0 +1,28 @@
+<mvc:View controllerName="com.snp.handylist.controller.Object" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>objectTitle} {Id}" busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{Prozessor}" number="{ path: 'Preis', formatter: '.formatter.numberUnit' }" numberUnit="{Currency}">
+				<attributes>
+					<ObjectAttribute title="Gewicht" text="{ path: 'Weight', formatter: '.formatter.numberUnit' } g"/>
+					<ObjectAttribute title="Bildschirmart" text="{ path: 'Display'}"/>
+					<ObjectAttribute title="Bildschirmdiagonale" text="{ path: 'Diagonale', formatter: '.formatter.numberUnit' } { path: 'DiagonaleUnit' }"/>
+					<ObjectAttribute title="Akkulaufzeit" text="{ path: 'Akku', formatter: '.formatter.numberUnit' } { path: 'AkkuUnit' }"/>
+				</attributes>
+			</ObjectHeader>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:editAction>
+			<semantic:EditAction press="onEditPress"/>
+		</semantic:editAction>
+		<semantic:deleteAction>
+			<semantic:DeleteAction press="onDeletePress"/>
+		</semantic:deleteAction>
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{objectView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+	</semantic:FullscreenPage>
+</mvc:View>

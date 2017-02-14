@@ -1,0 +1,36 @@
+<mvc:View controllerName="com.snp.handylist.controller.Create" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="true" title="Add New Handy">
+		<semantic:content>
+			<Panel headerText="Add New Handy">
+				<content>
+					<form:SimpleForm id="createForm" layout="ResponsiveGridLayout" editable="true" title="{Add new Handy}" minWidth="1024">
+						<form:content>
+							<Label text="Identification Number"/>
+							<Input id="idInput" placeholder="Enter ID..." value="086" type="Number"/>
+							<Label text="Price"/>
+							<Input id="priceInput" placeholder="Enter Price..." type="Number" value="145.25"/>
+							<Label text="Currency"/>
+							<Input id="currencyInput" placeholder="Enter Currency..." value="EUR"/>
+							<Label text="Processor"/>
+							<Input id="processorInput" placeholder="Enter Processor..." value="QUALCOMM"/>
+							<Label text="Battery Life "/>
+							<Input id="batteryInput" placeholder="Enter Battery Life..." description="hours" type="Number" value="8.00"/>
+							<Label text="Weight"/>
+							<Input id="weightInput" placeholder="Enter Weight..." description="gramm" type="Number" value="174"/>
+							<Label text="Display Type"/>
+							<ComboBox id="displayComboBox" items="{displayModel>/display}">
+								<core:Item key="{displayModel>key}" text="{displayModel>name}" />
+							</ComboBox>
+							<Label text="Diagonal"/>
+							<Input id="diagonalInput" placeholder="Enter Diagonal..." description="inch" type="Number" value="4.7"/>
+						</form:content>
+					</form:SimpleForm>
+				</content>
+			</Panel>
+		</semantic:content>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Add" press="onAddPress"/>
+		</semantic:positiveAction>
+	</semantic:FullscreenPage>
+</mvc:View>

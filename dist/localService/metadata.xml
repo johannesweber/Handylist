@@ -1,0 +1,32 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZJW_HANDYLIST_SRV" xml:lang="de" sap:schema-version="1">
+            <EntityType Name="Handy" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Identifikationsnr." sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preis" Type="Edm.Decimal" Nullable="false" Precision="18" Scale="3" sap:unit="Currency" sap:label="Betrag" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Währungsschlüssel" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Prozessor" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Prozessor" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Akku" Type="Edm.Decimal" Nullable="false" Precision="3" Scale="2" sap:unit="AkkuUnit" sap:label="Akku-Laufzeit" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Weight" Type="Edm.Byte" Nullable="false" sap:label="Gewicht" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Display" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Display" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Diagonale" Type="Edm.Decimal" Nullable="false" Precision="2" Scale="1" sap:unit="DiagonaleUnit" sap:label="Display Diagonale" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AkkuUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Maßeinh. Akkulfzeit" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="DiagonaleUnit" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Maßeinh. Diagonale" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityContainer Name="ZJW_HANDYLIST_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="HandySet" EntityType="ZJW_HANDYLIST_SRV.Handy" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZJW_HANDYLIST_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZJW_HANDYLIST_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
